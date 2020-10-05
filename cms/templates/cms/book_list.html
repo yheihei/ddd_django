@@ -12,6 +12,7 @@
           <th scope="col">書籍名</th>
           <th scope="col">出版社</th>
           <th scope="col">ページ数</th>
+          <th scope="col">コメント数</th>
           <th scope="col">操作</th>
         </tr>
       </thead>
@@ -22,6 +23,7 @@
           <td>{{ book.name }}</td>
           <td>{{ book.publisher }}</td>
           <td>{{ book.page }}</td>
+          <td>{{ book.impressionCount }}</td>
           <td>
             <a href="{% url 'cms:book_mod' book_id=book.id %}" class="btn btn-outline-primary btn-sm">修正</a>
             <a href="{% url 'cms:book_del' book_id=book.id %}" class="btn btn-outline-danger btn-sm">削除</a>
