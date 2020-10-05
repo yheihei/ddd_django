@@ -9,7 +9,8 @@ from cms.forms import BookForm, ImpressionForm
 def book_list(request):
     """書籍の一覧"""
     # return HttpResponse('書籍の一覧')
-    books = Book.objects.all().order_by('id')
+    # books = Book.objects.all().order_by('id')
+    books = Book.objects.getWithImpressionCount()
     return render(request,
         'cms/book_list.html',     # 使用するテンプレート
         {'books': books}
